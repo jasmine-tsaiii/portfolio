@@ -387,6 +387,8 @@ main>section:not(.hero){position:relative;padding:clamp(96px,16vh,200px) var(--g
 .plans li{padding:20px 0;border-bottom:1px solid var(--line)}
 .plans li:last-child{border-bottom:0}
 .plans h4{font-family:var(--f-serif);font-weight:500;font-size:17px;letter-spacing:.04em}
+.plan--featured{margin:0 -16px;padding:20px 16px !important;background:rgba(217,183,126,.07);border-left:2px solid var(--gold)}
+.plan--featured .badge{font-size:9px;margin-left:6px}
 .plans p{margin-top:4px;font-size:14px;color:var(--paper-dim)}
 .svc .btn-zoom{margin-top:auto;padding-top:30px;text-decoration:none}
 .plans{align-self:stretch}
