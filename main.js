@@ -168,7 +168,7 @@
   (function pl() { heroParallax(); requestAnimationFrame(pl); })();
 
   /* ==========================================================
-     2. FULL-SCREEN FILM-BURN TRANSITION
+     2. FULL-SCREEN TRANSITION — soft light blooms from the click, then clears
      ========================================================== */
   const burnCanvas = $('#burn');
   const burnFallback = $('.burn-fallback');
@@ -177,37 +177,42 @@
   function initBurn() {
     if (!hasGL) return;
     try {
-      const renderer = new THREE.WebGLRenderer({ canvas: burnCanvas, alpha: true, premultipliedAlpha: false, antialias: false });
+      const renderer = new THREE.WebGLRenderer({ canvas: burnCanvas, alpha: true, premultipliedAlpha: false, antialias: false, preserveDrawingBuffer: SLOW > 1 });
       renderer.setPixelRatio(Math.min(DPR, 1.5));
       renderer.setClearColor(0x000000, 0);
       const uniforms = {
-        uP: { value: 0 }, uMode: { value: 0 }, uTime: { value: 0 },
+        uP: { value: 0 }, uMode: { value: 0 }, uTime: { value: 0 }, uMax: { value: 1 },
         uO: { value: new THREE.Vector2(.5, .5) }, uRes: { value: new THREE.Vector2(1, 1) }
       };
       const mat = new THREE.ShaderMaterial({
         uniforms, transparent: true, vertexShader: VERT_FS,
         fragmentShader: `
           precision highp float;
-          uniform float uP, uMode, uTime; uniform vec2 uO, uRes;
+          uniform float uP, uMode, uTime, uMax; uniform vec2 uO, uRes;
           ${NOISE}
           void main(){
             vec2 uv = gl_FragCoord.xy / uRes;
             float asp = uRes.x / uRes.y;
             vec2 p = (uv - uO) * vec2(asp, 1.);
             float d = length(p);
-            float n = fbm(uv * vec2(asp,1.) * 3.2 + uTime*.15);
-            float maxD = length(vec2(asp, 1.)) + .5;
-            float e = uP * maxD - d - n * .42;
-            float inside = smoothstep(-.004, .004, e);
-            float black = mix(inside, 1. - inside, uMode);
-            float flame = exp(-abs(e) * 34.);
-            float core  = exp(-abs(e) * 140.);
-            vec3 hot = mix(vec3(.9,.28,.04), vec3(1.,.72,.32), flame);
-            hot = mix(hot, vec3(1.,.95,.82), core);
-            float a = clamp(black + flame * .95, 0., 1.);
-            vec3 col = mix(vec3(.012,.01,.008), hot, clamp(flame*1.1 + core, 0., 1.));
-            // embers sparkle on the edge
-            col += vec3(1.,.6,.2) * step(.985, hash(floor(gl_FragCoord.xy/3.) + floor(uTime*20.))) * flame * 1.5;
+            float n = fbm(uv * vec2(asp,1.) * 2.2 + uTime*.1) - .5;   // gentle wobble, not flames
+            float feather = .3;
+            float r = uP * (uMax + feather);
+            float e = r - d + n * .05;
+            float disc = smoothstep(-feather, 0., e);                    // soft-edged light disc
+            // light: bright cream at the origin, sinking to deep ink toward the edge and over time
+            float bloom = exp(-d * 2.6) * pow(1. - uP, .7);
+            float ring = exp(-abs(e + feather * .45) * 6.);
+            vec3 ink = vec3(.045, .037, .032);
+            vec3 cream = vec3(1., .86, .64);
+            vec3 col = mix(ink, cream, clamp(bloom * .85 + ring * .18, 0., 1.));
+            float a;
+            if (uMode < .5) {
+              a = disc * mix(.55, 1., smoothstep(.35, .9, uP));          // translucent glow first, opaque at the end
+            } else {
+              a = 1. - disc;                                              // clear from the centre outward
+              col = mix(ink, cream, ring * .22 * (1. - uP));
+            }
             gl_FragColor = vec4(col, a);
           }`
       });
@@ -221,8 +226,12 @@
       size();
       window.addEventListener('resize', size);
       burnGL = { renderer, uniforms, render: () => renderer.render(scene, cam) };
+      if (SLOW > 1) window.__burnDraw = (p, mode, ox, oy) => { uniforms.uP.value = p; uniforms.uMode.value = mode; uniforms.uO.value.set(ox, oy); { const asp = innerWidth / innerHeight; uniforms.uMax.value = Math.hypot(Math.max(ox, 1 - ox) * asp, Math.max(oy, 1 - oy)); } burnCanvas.classList.add('on'); renderer.render(scene, cam); return burnCanvas.toDataURL('image/png'); };
     } catch (e) { burnGL = null; }
   }
+
+  // distance from (ox, oy) to the farthest screen corner, in aspect-corrected units
+  const farCorner = (ox, oy) => { const asp = window.innerWidth / window.innerHeight; return Math.hypot(Math.max(ox, 1 - ox) * asp, Math.max(oy, 1 - oy)); };
 
   async function filmBurn(origin, midpoint) {
     const ox = origin.x / window.innerWidth, oy = origin.y / window.innerHeight;
@@ -242,12 +251,12 @@
     burnCanvas.classList.add('on');
     const t0 = performance.now();
     const tick = () => { u.uTime.value = (performance.now() - t0) / 1000; render(); };
-    u.uMode.value = 0; u.uO.value.set(ox, 1 - oy);
-    await tween(1050, p => { u.uP.value = p; tick(); });
+    u.uMode.value = 0; u.uO.value.set(ox, 1 - oy); u.uMax.value = farCorner(ox, oy);
+    await tween(950, p => { u.uP.value = p; tick(); });
     midpoint();
-    await wait(60);
-    u.uMode.value = 1; u.uO.value.set(.5, .5);
-    await tween(1150, p => { u.uP.value = p; tick(); });
+    await wait(80);
+    u.uMode.value = 1; u.uO.value.set(.5, .5); u.uMax.value = farCorner(.5, .5);
+    await tween(1100, p => { u.uP.value = p; tick(); }, easeOut);
     burnCanvas.classList.remove('on');
   }
 
@@ -295,7 +304,7 @@
   }, { passive: false });
 
   /* ==========================================================
-     3. MEDIA TOGGLE — still ↔ live, burn from click point
+     3. MEDIA TOGGLE — still ↔ live, soft light blooms from the click point
      ========================================================== */
   function coverFit(texW, texH, boxW, boxH, align) {
     const ta = texW / texH, ca = boxW / boxH;
@@ -342,17 +351,16 @@
         void main(){
           vec2 p = (vUv - uO) * vec2(uAsp, 1.);
           float d = length(p);
-          float n = fbm(vUv * vec2(uAsp, 1.) * 3.6 + uTime * .2);
-          float e = uP * (uMax + .5) - d - n * .38;
-          float m = smoothstep(-.004, .004, e);
-          float edge = exp(-abs(e) * 26.);
-          vec2 off = (p / max(d, 1e-4)) * edge * .018;
-          vec3 a = texture2D(tA, vUv * fitA.xy + fitA.zw - off).rgb;
-          vec3 b = texture2D(tB, vUv * fitB.xy + fitB.zw + off * .6).rgb;
+          float n = fbm(vUv * vec2(uAsp, 1.) * 2.4 + uTime * .1) - .5;
+          float feather = .32;
+          float e = uP * (uMax + feather * 1.5) - d + n * .05;
+          float m = smoothstep(-feather, 0., e);                                  // wide, soft edge
+          vec3 a = texture2D(tA, vUv * fitA.xy + fitA.zw).rgb;
+          vec3 b = texture2D(tB, vUv * fitB.xy + fitB.zw).rgb;
           vec3 col = mix(a, b, m);
-          col = mix(col, col * .12, exp(-max(e, 0.) * 32.) * m * .75);          // charred rim
-          col += vec3(1., .5, .14) * exp(-max(-e, 0.) * 40.) * (1. - m) * 1.1;   // flame front
-          col += vec3(1., .88, .66) * exp(-abs(e) * 150.) * .9;                  // white-hot core
+          float glow = exp(-abs(e + feather * .5) * 7.) * sin(3.14159 * uP);     // light rides the edge, fades out
+          col += vec3(1., .82, .58) * glow * .32;
+          col *= 1. + .12 * sin(3.14159 * uP);                                    // gentle overall brightening
           gl_FragColor = vec4(col, 1.);
         }`
     });
@@ -420,7 +428,7 @@
       setState();
     } else if (hasGL && !media.classList.contains('fx-fallback')) {
       let fx = null;
-      try { fx = shaderSwap(media, toLive ? still : live, toLive ? live : still, origin, isVideo ? 1100 : 1000); }
+      try { fx = shaderSwap(media, toLive ? still : live, toLive ? live : still, origin, isVideo ? 950 : 850); }
       catch (err) { fx = null; media.classList.add('fx-fallback'); }
       if (fx) {
         await fx.run();
