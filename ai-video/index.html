@@ -82,20 +82,20 @@
 
   <section class="th-section" id="works">
     <h2>作品</h2>
-    <p class="th-intro">點影片就能播放，建議開聲音看。</p>
+    <p class="th-intro">字幕、配色和節奏，都可以依照你習慣的剪輯風格配合。</p>
 
     <h3 class="th-subhead">素材剪輯：你拍好，我來剪</h3>
     <div class="av-works">
       <figure>
-        <video src="v/concert.mp4" poster="v/concert.jpg" controls playsinline preload="none"></video>
+        <video src="v/concert.mp4" poster="v/concert.jpg" controls muted playsinline preload="metadata"></video>
         <figcaption><strong>演奏會紀錄</strong><span>活動紀錄，現場片段配上字幕</span></figcaption>
       </figure>
       <figure>
-        <video src="v/swim.mp4" poster="v/swim.jpg" controls playsinline preload="none"></video>
+        <video src="v/swim.mp4" poster="v/swim.jpg" controls muted playsinline preload="metadata"></video>
         <figcaption><strong>游泳 1500 公尺</strong><span>生活 vlog，口說加配樂</span></figcaption>
       </figure>
       <figure>
-        <video src="v/selfmedia.mp4" poster="v/selfmedia.jpg" controls playsinline preload="none"></video>
+        <video src="v/selfmedia.mp4" poster="v/selfmedia.jpg" controls muted playsinline preload="metadata"></video>
         <figcaption><strong>自媒體經營真諦</strong><span>戶外口說，重點字上色</span></figcaption>
       </figure>
     </div>
@@ -103,15 +103,15 @@
     <h3 class="th-subhead">不露臉動畫：從腳本做到動畫</h3>
     <div class="av-works">
       <figure>
-        <video src="v/face.mp4" poster="v/face.jpg" controls playsinline preload="none"></video>
+        <video src="v/face.mp4" poster="v/face.jpg" controls muted playsinline preload="metadata"></video>
         <figcaption><strong>剪片要不要露臉</strong><span>行銷知識，圖卡動畫加音效</span></figcaption>
       </figure>
       <figure>
-        <video src="v/karma.mp4" poster="v/karma.jpg" controls playsinline preload="none"></video>
+        <video src="v/karma.mp4" poster="v/karma.jpg" controls muted playsinline preload="metadata"></video>
         <figcaption><strong>業力</strong><span>觀念解說，純文字動畫</span></figcaption>
       </figure>
       <figure>
-        <video src="v/guanyin.mp4" poster="v/guanyin.jpg" controls playsinline preload="none"></video>
+        <video src="v/guanyin.mp4" poster="v/guanyin.jpg" controls muted playsinline preload="metadata"></video>
         <figcaption><strong>觀自在</strong><span>情境故事，圖示動畫加音效</span></figcaption>
       </figure>
     </div>
@@ -268,9 +268,27 @@
   <p>© 2026 Jasmine Tsai・Jas Soul</p>
 </footer>
 <script>
-document.querySelectorAll('.av-works video').forEach(v=>v.addEventListener('play',()=>{
-  document.querySelectorAll('.av-works video').forEach(o=>{if(o!==v)o.pause();});
-}));
+(()=>{
+  const vids=[...document.querySelectorAll('.av-works video')];
+  const play=v=>{vids.forEach(o=>{if(o!==v)o.pause();});const p=v.play();if(p)p.catch(()=>{});};
+  vids.forEach(v=>{
+    v.muted=true;
+    v.addEventListener('play',()=>vids.forEach(o=>{if(o!==v)o.pause();}));
+  });
+  if(matchMedia('(hover: hover)').matches){
+    vids.forEach(v=>{
+      v.addEventListener('mouseenter',()=>play(v));
+      v.addEventListener('mouseleave',()=>{if(v.muted)v.pause();});
+    });
+  }else if('IntersectionObserver' in window){
+    const io=new IntersectionObserver(es=>es.forEach(e=>{
+      const v=e.target;
+      if(e.isIntersecting&&e.intersectionRatio>=.6){play(v);}
+      else if(!v.paused&&v.muted){v.pause();}
+    }),{threshold:[0,.6]});
+    vids.forEach(v=>io.observe(v));
+  }
+})();
 </script>
 </body>
 </html>
