@@ -499,7 +499,7 @@
   /* ==========================================================
      4. REVEALS + COUNTERS
      ========================================================== */
-  $$('.stats, .work-grid, .reel-rail, .skills, .svc-grid, .process, .features, .topics, .offers, .voice-list').forEach(group => {
+  $$('.stats, .work-grid, .reel-rail, .skills, .svc-grid, .process, .features, .art-grid').forEach(group => {
     $$(':scope > .reveal', group).forEach((el, i) => el.style.setProperty('--d', (i * .09).toFixed(2) + 's'));
   });
 
@@ -537,7 +537,7 @@
     if (!en.isIntersecting) return;
     links.forEach(a => a.setAttribute('aria-current', String(a.getAttribute('href') === '#' + en.target.id)));
   }), { rootMargin: '-45% 0px -50% 0px' });
-  ['products', 'chakra', 'reels', 'work', 'services'].forEach(id => sio.observe(document.getElementById(id)));
+  ['offer', 'products', 'reels', 'work', 'articles'].forEach(id => { const el = document.getElementById(id); if (el) sio.observe(el); });
 
   /* ==========================================================
      6. CURSOR + MICRO-INTERACTIONS
