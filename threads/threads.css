@@ -190,3 +190,9 @@
   .grain{animation:none}
   .th-btn,.th-more-link{transition:none}
 }
+.th-detail{margin-bottom:clamp(20px,3vh,28px)}
+.th-detail ul{margin:0;padding:0;list-style:none}
+.th-detail b{color:var(--paper);font-weight:500}
+.th .th-addons h4{color:var(--gold)}
+.th .th-addons .th-addon-price{color:var(--paper);margin:6px 0 10px;font-family:var(--f-serif);font-size:22px}
+.th-addons p:not(.th-addon-price){color:var(--paper-dim)}
