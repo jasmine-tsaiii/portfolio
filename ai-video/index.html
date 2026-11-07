@@ -62,7 +62,7 @@
       <li><a href="#faq">常見問題</a></li>
     </ul>
   </nav>
-  <a class="nav-cta" href="https://line.me/R/ti/p/@793hhvkh" target="_blank" rel="noopener">LINE 聊聊</a>
+  <a class="nav-cta" href="https://line.me/R/oaMessage/%40793hhvkh/?%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3%E7%9F%AD%E5%BD%B1%E9%9F%B3%E9%80%9F%E5%89%AA" target="_blank" rel="noopener">LINE 聊聊</a>
 </header>
 
 <main id="main">
@@ -255,7 +255,7 @@
     </div>
 
     <div class="th-actions av-center">
-      <a class="th-btn" href="https://line.me/R/ti/p/@793hhvkh" target="_blank" rel="noopener">加 LINE 詢問合作</a>
+      <a class="th-btn" href="https://line.me/R/oaMessage/%40793hhvkh/?%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3%E7%9F%AD%E5%BD%B1%E9%9F%B3%E9%80%9F%E5%89%AA" target="_blank" rel="noopener">加 LINE 詢問合作</a>
     </div>
   </section>
 
@@ -298,7 +298,7 @@
   <section class="th-cta">
     <h2>先聊聊你的影片</h2>
     <p>告訴我你想做的影片類型和每月產量，我再跟你說適合哪一種做法。</p>
-    <a class="th-btn" href="https://line.me/R/ti/p/@793hhvkh" target="_blank" rel="noopener">加 LINE 聊聊：@793hhvkh</a>
+    <a class="th-btn" href="https://line.me/R/oaMessage/%40793hhvkh/?%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3%E7%9F%AD%E5%BD%B1%E9%9F%B3%E9%80%9F%E5%89%AA" target="_blank" rel="noopener">加 LINE 聊聊：@793hhvkh</a>
   </section>
 
   <section class="th-section th-more">
@@ -343,6 +343,12 @@
     }),{threshold:[0,.6]});
     vids.forEach(v=>io.observe(v));
   }
+})();
+</script>
+<script>
+(()=>{ /* LINE prefilled messages only work in the phone app; desktop keeps the add-friend page */
+  if(/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) return;
+  document.querySelectorAll('a[href*="line.me/R/oaMessage/"]').forEach(a=>a.href='https://line.me/R/ti/p/@793hhvkh');
 })();
 </script>
 </body>
