@@ -208,3 +208,4 @@
 .th-stat{font-size:clamp(28px,2.8vw,38px)}
 .th-count{font-size:20px}
 .th .th-addons .th-addon-price{font-size:19px}
+.th-values small a,.th-faq p a{color:var(--gold);text-decoration:underline;text-underline-offset:3px}
