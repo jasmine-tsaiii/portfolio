@@ -22,8 +22,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@300;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style.css">
-<link rel="stylesheet" href="../threads/threads.css">
-<link rel="stylesheet" href="ai-video.css">
+<link rel="stylesheet" href="editor.css">
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -48,11 +47,10 @@
 }
 </script>
 </head>
-<body class="th">
+<body class="ed">
 <a class="skip" href="#main">跳到主要內容</a>
-<div class="grain" aria-hidden="true"></div>
 
-<header class="nav th-nav">
+<header class="nav ed-nav">
   <a class="nav-mark" href="../" aria-label="回到 Jasmine Tsai 首頁">Jasmine&nbsp;Tsai</a>
   <nav aria-label="本頁選單">
     <ul class="nav-links">
@@ -67,46 +65,59 @@
 
 <main id="main">
 
-  <section class="th-hero">
-    <p class="th-eyebrow">短影音速剪外包｜Reels・Shorts・不露臉動畫</p>
-    <h1>穩定、快速、<span class="av-nowrap">CP 值高</span></h1>
-    <ul class="av-keys">
-      <li><strong>穩定</strong><span>第一支定好風格，之後每支一致</span></li>
-      <li><strong>快速</strong><span>主打速剪，素材到了很快就能上片</span></li>
-      <li><strong>CP 值高</strong><span>首支體驗 NT$1,500，包月平均每支 NT$1,500 起</span></li>
-    </ul>
-    <div class="th-actions">
-      <a class="th-btn" href="#works">先看作品</a>
-      <a class="th-link" href="#pricing">看價格 <span aria-hidden="true">↓</span></a>
+  <section class="ed-hero">
+    <div class="ed-hero-text">
+      <p class="ed-tc">短影音速剪外包｜Reels・Shorts・不露臉動畫</p>
+      <h1>1 分鐘素材，<br>剪成 50 秒<span class="ed-nowrap">好看完的短影音</span></h1>
+      <ul class="ed-keys">
+        <li><b>穩定</b>第一支定好風格，之後每支一致</li>
+        <li><b>快速</b>主打速剪，素材到了很快就能上片</li>
+        <li><b>CP 值高</b>首支體驗 NT$1,500，包月平均每支 NT$1,500 起</li>
+      </ul>
+      <div class="ed-actions">
+        <a class="ed-btn" href="#works">看更多作品</a>
+        <a class="ed-link" href="#pricing">看價格 ↓</a>
+      </div>
+    </div>
+    <div class="ed-ba ed-ba--hero">
+      <figure>
+        <figcaption><span class="ed-tag">BEFORE</span>原始素材・1:00</figcaption>
+        <video src="v/selfmedia-raw.mp4" poster="v/selfmedia-raw.jpg" controls muted playsinline preload="metadata"></video>
+      </figure>
+      <div class="ed-ba-mid">
+        <p class="ed-ba-arrow">→</p>
+        <ul>
+          <li>剪掉停頓和口誤</li>
+          <li>加上逐字字幕</li>
+          <li>重點字上色</li>
+          <li>開頭標題卡</li>
+        </ul>
+      </div>
+      <figure>
+        <figcaption><span class="ed-tag ed-tag--rec">AFTER</span>速剪成品・0:50</figcaption>
+        <video src="v/selfmedia.mp4" poster="v/selfmedia.jpg" controls muted playsinline preload="metadata"></video>
+      </figure>
     </div>
   </section>
 
-  <section class="th-section" id="works">
+  <section class="ed-section" id="works">
+    <p class="ed-tc">00:12 ／ Works</p>
     <h2>作品</h2>
-    <p class="th-intro">字幕、配色和節奏，都可以依照你習慣的剪輯風格配合。</p>
+    <p class="ed-intro">字幕、配色和節奏，都可以依照你習慣的剪輯風格配合。</p>
 
-    <h3 class="th-subhead">素材速剪：你拍好，我來剪</h3>
-    <div class="av-works">
-      <figure>
-        <video src="v/concert.mp4" poster="v/concert.jpg" controls muted playsinline preload="metadata"></video>
-        <figcaption><strong>演奏會紀錄</strong><span>活動紀錄，速剪，現場片段配上字幕</span></figcaption>
-      </figure>
-      <figure>
-        <video src="v/swim.mp4" poster="v/swim.jpg" controls muted playsinline preload="metadata"></video>
-        <figcaption><strong>游泳 1500 公尺</strong><span>生活 vlog，速剪，口說加配樂</span></figcaption>
-      </figure>
-      <figure>
-        <video src="v/selfmedia.mp4" poster="v/selfmedia.jpg" controls muted playsinline preload="metadata"></video>
-        <figcaption><strong>自媒體經營真諦</strong><span>戶外口說，速剪，重點字上色</span></figcaption>
-      </figure>
+    <h3 class="ed-sub">素材速剪：你拍好，我來剪</h3>
+    <div class="ed-reels">
+      <figure><video src="v/concert.mp4" poster="v/concert.jpg" controls muted playsinline preload="metadata"></video><figcaption><span class="ed-clipno">CLIP 01・0:52</span><strong>演奏會紀錄</strong><span>活動紀錄，現場片段配上字幕</span></figcaption></figure>
+      <figure><video src="v/swim.mp4" poster="v/swim.jpg" controls muted playsinline preload="metadata"></video><figcaption><span class="ed-clipno">CLIP 02・0:49</span><strong>游泳 1500 公尺</strong><span>生活 vlog，口說加配樂</span></figcaption></figure>
+      <figure><video src="v/selfmedia.mp4" poster="v/selfmedia.jpg" controls muted playsinline preload="metadata"></video><figcaption><span class="ed-clipno">CLIP 03・0:50</span><strong>自媒體經營真諦</strong><span>戶外口說，重點字上色</span></figcaption></figure>
     </div>
 
-    <h3 class="th-subhead">不露臉動畫：從腳本做到動畫</h3>
-    <div class="av-anim">
-      <article class="av-anim-row">
+    <h3 class="ed-sub">不露臉動畫：從腳本做到動畫</h3>
+    <div class="ed-anim">
+      <article class="ed-anim-row">
         <video src="v/face.mp4" poster="v/face.jpg" controls muted playsinline preload="metadata"></video>
-        <div class="av-anim-case">
-        <p class="av-case-tag">行銷知識・42 秒</p>
+        <div class="ed-anim-case">
+        <p class="ed-clipno">行銷知識・42 秒</p>
         <h4>剪片要不要露臉</h4>
         <dl>
           <dt>目標</dt><dd>回答新手最常卡住的問題，最後引導留言「拍片」拿資源</dd>
@@ -115,10 +126,10 @@
         </dl>
         </div>
       </article>
-      <article class="av-anim-row">
+      <article class="ed-anim-row">
         <video src="v/karma.mp4" poster="v/karma.jpg" controls muted playsinline preload="metadata"></video>
-        <div class="av-anim-case">
-        <p class="av-case-tag">靈性白話文・66 秒</p>
+        <div class="ed-anim-case">
+        <p class="ed-clipno">靈性白話文・66 秒</p>
         <h4>業力</h4>
         <dl>
           <dt>目標</dt><dd>把難懂的靈性詞翻成白話，讓沒有背景的人也聽得懂</dd>
@@ -127,10 +138,10 @@
         </dl>
         </div>
       </article>
-      <article class="av-anim-row">
+      <article class="ed-anim-row">
         <video src="v/guanyin.mp4" poster="v/guanyin.jpg" controls muted playsinline preload="metadata"></video>
-        <div class="av-anim-case">
-        <p class="av-case-tag">靈性白話文・86 秒</p>
+        <div class="ed-anim-case">
+        <p class="ed-clipno">靈性白話文・86 秒</p>
         <h4>觀自在</h4>
         <dl>
           <dt>目標</dt><dd>用生活比喻說明「不被情緒綁住」，讓觀念變得可以練習</dd>
@@ -142,128 +153,62 @@
     </div>
   </section>
 
-  <section class="th-section th-split">
-    <div>
-      <h2>適合誰？</h2>
-    </div>
-    <ul class="th-list">
-      <li>品牌或公司要穩定產出短影音，想找長期配合的剪輯</li>
-      <li>自己有在拍，但剪片太花時間，想把時間留給拍攝和本業</li>
-      <li>不想露臉、也沒時間拍，但想用短影音講清楚你的專業</li>
-    </ul>
-  </section>
-
-  <section class="th-section th-band" id="service">
-    <h2>兩種做法</h2>
-    <div class="th-two">
-      <div class="th-panel">
-        <h3>素材速剪</h3>
-        <p>你提供拍好的素材，我快速剪成可以直接上架的短影音。</p>
-        <ul class="th-checks">
-          <li>剪掉空白、口誤和重複的段落</li>
-          <li>逐字字幕，重點字上色</li>
-          <li>開頭標題卡，抓住前三秒</li>
-          <li>加上你的帳號或品牌浮水印</li>
-          <li>裁成 9:16，Reels、Shorts、TikTok 都能用</li>
-        </ul>
-      </div>
-      <div class="th-panel">
-        <h3>不露臉動畫（含腳本）</h3>
-        <p>不用拍、不用露臉，從主題開始做到完成的影片。</p>
-        <ul class="th-checks">
-          <li>依你的主題寫腳本，你確認後才製作</li>
-          <li>文字與圖示動畫，統一你的品牌配色</li>
-          <li>重點音效，讓節奏更好看下去</li>
-          <li>附封面，系列影片風格一致</li>
-          <li>旁白可用 AI 配音，不含真人配音</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="th-section" id="scope">
+  <section class="ed-section ed-band" id="scope">
+    <p class="ed-tc">00:24 ／ Scope</p>
     <h2>速剪包含什麼？</h2>
-    <p class="th-intro">主打快速上片，把影片剪乾淨、好讀、好看下去。</p>
-    <div class="th-two">
-      <div class="th-panel">
+    <p class="ed-intro">主打快速上片，把影片剪乾淨、好讀、好看下去。</p>
+    <div class="ed-two">
+      <div class="ed-card">
         <h3>速剪包含</h3>
-        <ul class="th-checks">
-          <li>剪掉空白、口誤和重複的段落</li>
-          <li>逐字字幕，重點字上色</li>
-          <li>開頭標題卡</li>
-          <li>浮水印、裁成 9:16</li>
-        </ul>
+        <ul class="ed-yes"><li>剪掉空白、口誤和重複的段落</li><li>逐字字幕，重點字上色</li><li>開頭標題卡</li><li>浮水印、裁成 9:16</li></ul>
       </div>
-      <div class="th-panel th-panel-quiet">
+      <div class="ed-card ed-card--quiet">
         <h3>不包含</h3>
-        <ul class="th-plain">
-          <li>大量畫面穿插、B-roll 素材搜集</li>
-          <li>調色、美顏、修膚</li>
-          <li>複雜特效、動態圖像</li>
-          <li>電影感的精緻剪輯</li>
-        </ul>
+        <ul class="ed-no"><li>大量畫面穿插、B-roll 素材搜集</li><li>調色、美顏、修膚</li><li>複雜特效、動態圖像</li><li>電影感的精緻剪輯</li></ul>
       </div>
     </div>
-    <p class="th-note">適合口說、知識分享、Vlog 這類要穩定上片的影片。如果需要很精緻的剪輯，建議找專門的後製團隊。</p>
+    <p class="ed-note">適合口說、知識分享、Vlog 這類要穩定上片的影片。如果需要很精緻的剪輯，建議找專門的後製團隊。</p>
+
+    <h3 class="ed-sub">兩種做法</h3>
+    <div class="ed-two">
+      <div class="ed-card"><h3>素材速剪</h3><p>你提供拍好的素材，我快速剪成可以直接上架的短影音。Reels、Shorts、TikTok 都能用。</p></div>
+      <div class="ed-card"><h3>不露臉動畫（含腳本）</h3><p>不用拍、不用露臉。依你的主題寫腳本，確認後做成文字與圖示動畫，加上重點音效和封面。旁白可用 AI 配音，不含真人配音。</p></div>
+    </div>
   </section>
 
-  <section class="th-section" id="process">
+  <section class="ed-section" id="process">
+    <p class="ed-tc">00:36 ／ Process</p>
     <h2>合作流程</h2>
-    <ol class="th-steps">
-      <li><strong>聊需求</strong><span>告訴我你的帳號、想做的影片類型和每月產量。</span></li>
-      <li><strong>定風格</strong><span>第一支先確認字幕、配色和節奏，之後都照這個風格做。</span></li>
-      <li><strong>製作</strong><span>素材上傳到雲端，動畫則先給你確認腳本。</span></li>
-      <li><strong>確認交件</strong><span>每支影片可以修改兩次，確認後交付完整影片檔。</span></li>
+    <ol class="ed-flow">
+      <li><span>01</span><b>聊需求</b>告訴我你的帳號、影片類型和每月產量</li>
+      <li><span>02</span><b>定風格</b>第一支確認字幕、配色和節奏</li>
+      <li><span>03</span><b>上傳素材</b>丟到雲端，動畫則先確認腳本</li>
+      <li><span>04</span><b>交件</b>每支可以修改兩次，確認後交付</li>
     </ol>
   </section>
 
-  <section class="th-section th-band" id="pricing">
+  <section class="ed-section ed-band" id="pricing">
+    <p class="ed-tc">00:48 ／ Pricing</p>
     <h2>價格</h2>
-    <p class="th-intro">第一支用體驗價先試試看，合作順了再改包月，平均每支更划算。</p>
-
-    <h3 class="th-subhead">素材速剪</h3>
-    <div class="th-plans">
-      <article class="th-plan">
-        <h4>首支體驗</h4>
-        <p class="th-count">NT$1,500</p>
-        <p class="th-incl">第一次合作限一支，之後單支 NT$1,800</p>
-      </article>
-      <article class="th-plan is-main">
-        <h4>每月 4 支（推薦）</h4>
-        <p class="th-count">NT$6,400</p>
-        <p class="th-incl">平均每支 NT$1,600</p>
-      </article>
-      <article class="th-plan">
-        <h4>每月 8 支</h4>
-        <p class="th-count">NT$12,000</p>
-        <p class="th-incl">平均每支 NT$1,500</p>
-      </article>
+    <p class="ed-intro">第一支用體驗價先試試看，合作順了再改包月，平均每支更划算。</p>
+    <h3 class="ed-sub">素材速剪</h3>
+    <div class="ed-plans">
+      <article class="ed-plan"><h4>首支體驗</h4><p class="ed-price">NT$1,500</p><p>第一次合作限一支，之後單支 NT$1,800</p></article>
+      <article class="ed-plan ed-plan--main"><h4>每月 4 支（推薦）</h4><p class="ed-price">NT$6,400</p><p>平均每支 NT$1,600</p></article>
+      <article class="ed-plan"><h4>每月 8 支</h4><p class="ed-price">NT$12,000</p><p>平均每支 NT$1,500</p></article>
     </div>
-
-    <h3 class="th-subhead">不露臉動畫（含腳本）</h3>
-    <div class="th-plans av-plans-2">
-      <article class="th-plan">
-        <h4>單支</h4>
-        <p class="th-count">NT$3,500</p>
-        <p class="th-incl">含腳本、動畫、音效、封面</p>
-      </article>
-      <article class="th-plan is-main">
-        <h4>每月 4 支（推薦）</h4>
-        <p class="th-count">NT$12,000</p>
-        <p class="th-incl">平均每支 NT$3,000</p>
-      </article>
+    <h3 class="ed-sub">不露臉動畫（含腳本）</h3>
+    <div class="ed-plans">
+      <article class="ed-plan"><h4>單支</h4><p class="ed-price">NT$3,500</p><p>含腳本、動畫、音效、封面</p></article>
+      <article class="ed-plan ed-plan--main"><h4>每月 4 支（推薦）</h4><p class="ed-price">NT$12,000</p><p>平均每支 NT$3,000</p></article>
     </div>
-
-    <div class="th-actions av-center">
-      <a class="th-btn" href="https://line.me/R/oaMessage/%40793hhvkh/?%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3%E7%9F%AD%E5%BD%B1%E9%9F%B3%E9%80%9F%E5%89%AA" target="_blank" rel="noopener">加 LINE 詢問合作</a>
-    </div>
+    <div class="ed-actions ed-center"><a class="ed-btn" href="https://line.me/R/oaMessage/%40793hhvkh/?%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3%E7%9F%AD%E5%BD%B1%E9%9F%B3%E9%80%9F%E5%89%AA" target="_blank" rel="noopener">加 LINE 詢問合作</a></div>
   </section>
 
-  <section class="th-section th-split" id="faq">
-    <div>
-      <h2>常見問題</h2>
-    </div>
-    <div class="th-faq">
+  <section class="ed-section" id="faq">
+    <p class="ed-tc">00:54 ／ FAQ</p>
+    <h2>常見問題</h2>
+    <div class="ed-faq">
       <details>
         <summary>有接 YouTube 長影片嗎？</summary>
         <p>目前專注在 Reels、Shorts、TikTok 這類短影音。如果你有長影片，可以挑出精華片段剪成短影音。</p>
@@ -295,57 +240,36 @@
     </div>
   </section>
 
-  <section class="th-cta">
-    <h2>先聊聊你的影片</h2>
-    <p>告訴我你想做的影片類型和每月產量，我再跟你說適合哪一種做法。</p>
-    <a class="th-btn" href="https://line.me/R/oaMessage/%40793hhvkh/?%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3%E7%9F%AD%E5%BD%B1%E9%9F%B3%E9%80%9F%E5%89%AA" target="_blank" rel="noopener">加 LINE 聊聊：@793hhvkh</a>
+  <section class="ed-cta">
+    <p class="ed-tc">00:60 ／ END</p>
+    <h2>先傳一支素材給我看看</h2>
+    <p>告訴我你想放在哪個平台，我看完跟你說怎麼剪、多久交件。</p>
+    <a class="ed-btn" href="https://line.me/R/oaMessage/%40793hhvkh/?%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3%E7%9F%AD%E5%BD%B1%E9%9F%B3%E9%80%9F%E5%89%AA" target="_blank" rel="noopener">加 LINE 聊聊：@793hhvkh</a>
   </section>
 
-  <section class="th-section th-more">
+  <section class="ed-section ed-more">
     <h2>也想了解其他服務？</h2>
-    <div class="th-two">
-      <a class="th-panel th-more-link" href="../threads/">
-        <h3>Threads 脆海巡代操</h3>
-        <p>在對的貼文底下留言，讓更多潛在客戶看見你。</p>
-        <span>了解海巡方案 <i aria-hidden="true">→</i></span>
-      </a>
-      <a class="th-panel th-more-link" href="https://selfmedia.jas-soul.com/" target="_blank" rel="noopener">
-        <h3>一對一自媒體陪跑</h3>
-        <p>三個月陪你從定位走到開始被付費。</p>
-        <span>了解陪跑方案 <i aria-hidden="true">→</i></span>
-      </a>
+    <div class="ed-two">
+      <a class="ed-card ed-more-link" href="../threads/"><h3>Threads 脆海巡代操</h3><p>在對的貼文底下留言，讓更多潛在客戶看見你。</p><span>了解海巡方案 →</span></a>
+      <a class="ed-card ed-more-link" href="https://selfmedia.jas-soul.com/" target="_blank" rel="noopener"><h3>一對一自媒體陪跑</h3><p>三個月陪你從定位走到開始被付費。</p><span>了解陪跑方案 →</span></a>
     </div>
   </section>
 
 </main>
 
-<footer class="th-footer">
-  <p>© 2026 Jasmine Tsai・Jas Soul</p>
-</footer>
+<footer class="ed-footer"><p>© 2026 Jasmine Tsai・Jas Soul</p></footer>
 <script>
 (()=>{
-  const vids=[...document.querySelectorAll('.av-works video, .av-anim video')];
+  const vids=[...document.querySelectorAll('.ed-ba video, .ed-reels video, .ed-anim video')];
   const play=v=>{vids.forEach(o=>{if(o!==v)o.pause();});const p=v.play();if(p)p.catch(()=>{});};
-  vids.forEach(v=>{
-    v.muted=true;
-    v.addEventListener('play',()=>vids.forEach(o=>{if(o!==v)o.pause();}));
-  });
+  vids.forEach(v=>{v.muted=true;v.addEventListener('play',()=>vids.forEach(o=>{if(o!==v)o.pause();}));});
   if(matchMedia('(hover: hover)').matches){
-    vids.forEach(v=>{
-      v.addEventListener('mouseenter',()=>play(v));
-      v.addEventListener('mouseleave',()=>{if(v.muted)v.pause();});
-    });
+    vids.forEach(v=>{v.addEventListener('mouseenter',()=>play(v));v.addEventListener('mouseleave',()=>{if(v.muted)v.pause();});});
   }else if('IntersectionObserver' in window){
-    const io=new IntersectionObserver(es=>es.forEach(e=>{
-      const v=e.target;
-      if(e.isIntersecting&&e.intersectionRatio>=.6){play(v);}
-      else if(!v.paused&&v.muted){v.pause();}
-    }),{threshold:[0,.6]});
+    const io=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;if(e.isIntersecting&&e.intersectionRatio>=.6){play(v);}else if(!v.paused&&v.muted){v.pause();}}),{threshold:[0,.6]});
     vids.forEach(v=>io.observe(v));
   }
 })();
-</script>
-<script>
 (()=>{ /* LINE prefilled messages only work in the phone app; desktop keeps the add-friend page */
   if(/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) return;
   document.querySelectorAll('a[href*="line.me/R/oaMessage/"]').forEach(a=>a.href='https://line.me/R/ti/p/@793hhvkh');
