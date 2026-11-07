@@ -68,33 +68,25 @@
   <section class="ed-hero">
     <div class="ed-hero-text">
       <p class="ed-tc">短影音速剪外包｜Reels・Shorts・不露臉動畫</p>
-      <h1>1 分鐘素材，<br>剪成 50 秒<span class="ed-nowrap">好看完的短影音</span></h1>
-      <ul class="ed-keys">
-        <li><b>穩定</b>第一支定好風格，之後每支一致</li>
-        <li><b>快速</b>主打速剪，素材到了很快就能上片</li>
-        <li><b>CP 值高</b>首支體驗 NT$1,500，包月平均每支 NT$1,500 起</li>
+      <h1>讓短影音<br><em>穩定高效</em>更新</h1>
+      <p class="ed-lede">剪掉停頓和口誤，加上字幕、重點字和標題卡，直接就能上片。</p>
+      <ul class="ed-stats">
+        <li><b>穩定</b><span>風格每支一致</span></li>
+        <li><b>快速</b><span>素材到就開剪</span></li>
+        <li><b>CP 值高</b><span>首支 NT$1,500</span></li>
       </ul>
       <div class="ed-actions">
-        <a class="ed-btn" href="#works">看更多作品</a>
+        <a class="ed-btn" href="https://line.me/R/oaMessage/%40793hhvkh/?%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3%E7%9F%AD%E5%BD%B1%E9%9F%B3%E9%80%9F%E5%89%AA" target="_blank" rel="noopener">傳素材給我</a>
         <a class="ed-link" href="#pricing">看價格 ↓</a>
       </div>
     </div>
-    <div class="ed-ba ed-ba--hero">
-      <figure>
-        <figcaption><span class="ed-tag">BEFORE</span>原始素材・1:00</figcaption>
+    <div class="ed-stack">
+      <figure class="ed-stack-before">
+        <figcaption><span class="ed-tag">BEFORE</span>原始素材 1:00</figcaption>
         <video src="v/selfmedia-raw.mp4" poster="v/selfmedia-raw.jpg" controls muted playsinline preload="metadata"></video>
       </figure>
-      <div class="ed-ba-mid">
-        <p class="ed-ba-arrow">→</p>
-        <ul>
-          <li>剪掉停頓和口誤</li>
-          <li>加上逐字字幕</li>
-          <li>重點字上色</li>
-          <li>開頭標題卡</li>
-        </ul>
-      </div>
-      <figure>
-        <figcaption><span class="ed-tag ed-tag--rec">AFTER</span>速剪成品・0:50</figcaption>
+      <figure class="ed-stack-after">
+        <figcaption><span class="ed-tag ed-tag--rec">AFTER</span>速剪成品 0:50</figcaption>
         <video src="v/selfmedia.mp4" poster="v/selfmedia.jpg" controls muted playsinline preload="metadata"></video>
       </figure>
     </div>
@@ -260,7 +252,7 @@
 <footer class="ed-footer"><p>© 2026 Jasmine Tsai・Jas Soul</p></footer>
 <script>
 (()=>{
-  const vids=[...document.querySelectorAll('.ed-ba video, .ed-reels video, .ed-anim video')];
+  const vids=[...document.querySelectorAll('.ed-stack video, .ed-reels video, .ed-anim video')];
   const play=v=>{vids.forEach(o=>{if(o!==v)o.pause();});const p=v.play();if(p)p.catch(()=>{});};
   vids.forEach(v=>{v.muted=true;v.addEventListener('play',()=>vids.forEach(o=>{if(o!==v)o.pause();}));});
   if(matchMedia('(hover: hover)').matches){
