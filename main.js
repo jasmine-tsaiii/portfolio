@@ -537,7 +537,7 @@
     if (!en.isIntersecting) return;
     links.forEach(a => a.setAttribute('aria-current', String(a.getAttribute('href') === '#' + en.target.id)));
   }), { rootMargin: '-45% 0px -50% 0px' });
-  ['offer', 'products', 'reels', 'work', 'articles'].forEach(id => { const el = document.getElementById(id); if (el) sio.observe(el); });
+  ['offer', 'products', 'reels', 'work', 'articles', 'check'].forEach(id => { const el = document.getElementById(id); if (el) sio.observe(el); });
 
   /* ==========================================================
      6. CURSOR + MICRO-INTERACTIONS

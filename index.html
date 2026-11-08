@@ -67,6 +67,7 @@
   <nav aria-label="主選單">
     <ul class="nav-links">
       <li><a href="#work">案例</a></li>
+      <li><a href="#check">卡點檢測</a></li>
       <li><a href="#reels">短影音</a></li>
       <li><a href="#articles">文章</a></li>
       <li><a href="#offer">服務</a></li>
@@ -90,14 +91,15 @@
       <span class="line"><span>讓對的人<em>看見</em>你，</span></span>
       <span class="line"><span>是我最擅長的事</span></span>
     </h1>
-    <p class="hero-sub">7 年社群行銷經驗。現在用 Threads 海巡、短影音剪輯和一對一陪跑，幫個人品牌和小店家被更多人看見。</p>
+    <div class="hero-intro">
+      <p class="hero-sub">Hi，我是 Jasmine 佳穎。從科技業產品行銷走到自己經營 Threads，3 個月累積 457 萬瀏覽。現在，我把這些方法用在你的品牌上。</p>
+    </div>
     <nav class="hero-tags" aria-label="服務目錄">
       <a href="threads/">脆海巡代操</a>
       <a href="ai-video/">短影音剪輯</a>
       <a href="https://selfmedia.jas-soul.com/" target="_blank" rel="noopener">自媒體陪跑</a>
       <a href="#tools">AI 小工具</a>
       <a href="https://jas-soul.com/chakra/" target="_blank" rel="noopener">脈輪解讀療癒</a>
-      <a href="#articles">SEO 文章</a>
     </nav>
     <button class="btn-enter" id="enter" type="button" data-cursor="進入">
       <span class="btn-enter-ring" aria-hidden="true"></span>
@@ -109,7 +111,7 @@
 </section>
 
 <!-- ============ WORK ============ -->
-<section class="work" id="work" aria-labelledby="work-title">
+<section class="work light" id="work" aria-labelledby="work-title">
   <header class="chapter">
     <p class="chapter-no">Chapter I</p>
     <h2 class="chapter-title" id="work-title">這些年，在社群裡累積的事</h2>
@@ -231,10 +233,53 @@
   </div>
 </section>
 
-<!-- ============ REELS ============ -->
-<section class="reels" id="reels" aria-labelledby="reels-title">
+<!-- ============ CHECK ============ -->
+<section class="check" id="check" aria-labelledby="check-title">
   <header class="chapter">
     <p class="chapter-no">Chapter II</p>
+    <h2 class="chapter-title" id="check-title">你的自媒體，卡在哪一關？</h2>
+    <p class="chapter-hint">勾選跟你最像的狀況，看看可以從哪裡開始</p>
+  </header>
+  <div class="check-grid">
+    <ul class="check-list" aria-label="自媒體卡點">
+      <li><label><input type="checkbox" data-k="patrol"><span>發了很多文，但看的人一直是同一群</span></label></li>
+      <li><label><input type="checkbox" data-k="video"><span>拍好的影片一直放著，沒時間剪</span></label></li>
+      <li><label><input type="checkbox" data-k="coach"><span>不知道自己該講什麼、要講給誰聽</span></label></li>
+      <li><label><input type="checkbox" data-k="patrol"><span>有人在問推薦，卻沒有人想到我</span></label></li>
+      <li><label><input type="checkbox" data-k="video"><span>剪一支片要花一整晚，很難固定更新</span></label></li>
+      <li><label><input type="checkbox" data-k="coach"><span>有在經營，但從來沒有人來問服務</span></label></li>
+    </ul>
+    <aside class="check-result" aria-live="polite">
+      <p class="check-label">你的卡點</p>
+      <p class="check-count"><b id="check-n">0</b> / 6</p>
+      <div class="check-out" data-r="none">
+        <h3>先勾選左邊的狀況</h3>
+        <p>勾完後，這裡會告訴你可以從哪一個服務開始。</p>
+      </div>
+      <div class="check-out" data-r="patrol" hidden>
+        <h3>你需要先被更多人看見</h3>
+        <p>內容不差，只是還沒走到對的人面前。脆海巡會在大家正在討論的地方留言，把新的注意力帶回你的帳號。</p>
+        <div class="check-cta"><a class="btn-product" href="https://line.me/R/oaMessage/%40793hhvkh/?%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3%E8%84%86%E6%B5%B7%E5%B7%A1%E6%96%B9%E6%A1%88" target="_blank" rel="noopener">LINE 聊聊海巡</a><a class="btn-zoom" href="threads/">看脆海巡方案 <span aria-hidden="true">→</span></a></div>
+      </div>
+      <div class="check-out" data-r="video" hidden>
+        <h3>你需要有人幫你把片剪出來</h3>
+        <p>素材有了，卡在剪輯的時間。速剪幫你剪掉空白、上字幕和標題卡，讓短影音穩定更新。</p>
+        <div class="check-cta"><a class="btn-product" href="https://line.me/R/oaMessage/%40793hhvkh/?%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3%E7%9F%AD%E5%BD%B1%E9%9F%B3%E9%80%9F%E5%89%AA" target="_blank" rel="noopener">傳素材給我</a><a class="btn-zoom" href="ai-video/">看速剪作品與價格 <span aria-hidden="true">→</span></a></div>
+      </div>
+      <div class="check-out" data-r="coach" hidden>
+        <h3>你需要先把方向和服務理清楚</h3>
+        <p>不是不努力，是還沒找到定位和被付費的路。三個月一對一陪跑，每週一堂課加學習單，邊做邊學。</p>
+        <div class="check-cta"><a class="btn-product" href="https://line.me/R/oaMessage/%40793hhvkh/?%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3%E8%87%AA%E5%AA%92%E9%AB%94%E9%99%AA%E8%B7%91" target="_blank" rel="noopener">LINE 聊聊陪跑</a><a class="btn-zoom" href="https://selfmedia.jas-soul.com/" target="_blank" rel="noopener">看陪跑方案 <span aria-hidden="true">↗</span></a></div>
+      </div>
+    </aside>
+  </div>
+  <p class="check-more reveal">卡點不只一個？<a href="https://selfmedia.jas-soul.com/" target="_blank" rel="noopener">自媒體陪跑</a>會陪你一關一關處理；只是沒時間剪片，可以直接交給 <a href="ai-video/">AI 短影音速剪</a>。</p>
+</section>
+
+<!-- ============ REELS ============ -->
+<section class="reels light" id="reels" aria-labelledby="reels-title">
+  <header class="chapter">
+    <p class="chapter-no">Chapter III</p>
     <h2 class="chapter-title" id="reels-title">短影音</h2>
     <p class="chapter-hint">從企劃、口說到剪輯，都是自己動手做</p>
   </header>
@@ -305,15 +350,18 @@
       <button class="btn-zoom" type="button" data-reel="assets/video/reel-cello.mp4">放大觀看 <span aria-hidden="true">↗</span></button>
     </article>
   </div>
-  <div class="product-actions reels-more reveal">
-    <a class="btn-product" href="ai-video/" data-cursor="作品">看更多剪輯作品與價格 <span aria-hidden="true">→</span></a>
+  <div class="reels-cta reveal">
+    <p>這些影片都是我自己企劃、剪輯的。想讓你的短影音也穩定更新？</p>
+    <div class="product-actions">
+      <a class="btn-product" href="ai-video/" data-cursor="速剪">了解 AI 短影音速剪 <span aria-hidden="true">→</span></a>
+    </div>
   </div>
 </section>
 
 <!-- ============ ARTICLES ============ -->
 <section class="articles" id="articles" aria-labelledby="articles-title">
   <header class="chapter">
-    <p class="chapter-no">Chapter III</p>
+    <p class="chapter-no">Chapter IV</p>
     <h2 class="chapter-title" id="articles-title">邊做邊整理的經營筆記</h2>
     <p class="chapter-hint">希望對正在經營的你有幫助</p>
   </header>
@@ -349,14 +397,14 @@
 </section>
 
 <!-- ============ OFFER ============ -->
-<section class="offer-sec" id="offer" aria-labelledby="offer-title">
+<section class="offer-sec light" id="offer" aria-labelledby="offer-title">
   <header class="chapter">
-    <p class="chapter-no">Chapter IV</p>
+    <p class="chapter-no">Chapter V</p>
     <h2 class="chapter-title" id="offer-title">我們可以一起合作</h2>
     <p class="chapter-hint">不確定哪一種適合？歡迎先聊聊</p>
   </header>
   <div class="svc-grid offer-grid">
-    <div class="svc reveal">
+    <div class="svc svc--patrol reveal">
       <p class="svc-en">Threads Patrol</p>
       <h3 class="svc-title">Threads 脆海巡代操</h3>
       <p class="svc-lede">追蹤熱門話題和需求關鍵字，在值得出現的貼文底下留言，把新的注意力帶回你的帳號。</p>
@@ -372,14 +420,14 @@
       </div>
       <a class="btn-zoom" href="threads/">看服務內容與方案 <span aria-hidden="true">→</span></a>
     </div>
-    <div class="svc reveal">
+    <div class="svc svc--video reveal">
       <p class="svc-en">Short Video Editing</p>
       <h3 class="svc-title">短影音剪輯外包</h3>
       <p class="svc-lede">拍好的素材幫你剪成 Reels、Shorts，也可以從腳本做到不露臉動畫。穩定、快速、CP 值高。</p>
       <p class="svc-price">主打速剪，首支體驗 NT$1,500，可包月</p>
       <a class="btn-zoom" href="ai-video/">看作品與價格 <span aria-hidden="true">→</span></a>
     </div>
-    <div class="svc reveal">
+    <div class="svc svc--coach reveal">
       <p class="svc-en">Self-media Coaching</p>
       <h3 class="svc-title">一對一自媒體陪跑</h3>
       <p class="svc-lede">三個月陪你從定位、內容到第一次被付費。教你做，不是幫你做。</p>
@@ -407,7 +455,7 @@
 <!-- ============ PRODUCTS ============ -->
 <section class="products" id="products" aria-labelledby="products-title">
   <header class="chapter">
-    <p class="chapter-no">Chapter V</p>
+    <p class="chapter-no">Chapter VI</p>
     <h2 class="chapter-title" id="products-title">用 AI 做的小工具</h2>
     <p class="chapter-hint">免費使用，加到手機主畫面就能開始</p>
   </header>
@@ -444,8 +492,8 @@
 
   <article class="product product--quiz reveal" aria-labelledby="p3-title">
     <div class="phones">
-      <figure class="phone phone--back"><img src="assets/img/chakra-page.jpg" alt="脈輪解讀服務頁：看見自己的模式，練習新的回應" width="690" height="1494" loading="lazy" decoding="async"></figure>
-      <figure class="phone phone--front"><img src="assets/img/product-quiz.jpg" alt="七脈輪感情導航測驗開始畫面" width="690" height="1494" loading="lazy" decoding="async"></figure>
+      <figure class="phone phone--back"><img src="assets/img/product-quiz-q.jpg" alt="七脈輪感情導航的題目畫面：感情讓我有壓力時，我還是能照常過生活" width="690" height="1494" loading="lazy" decoding="async"></figure>
+      <figure class="phone phone--front"><img src="assets/img/product-quiz.jpg" alt="七脈輪感情導航的開始畫面：星空與七顆脈輪行星環繞" width="690" height="1494" loading="lazy" decoding="async"></figure>
     </div>
     <div class="product-body">
       <p class="case-index">02 / 名單磁鐵</p>
@@ -505,9 +553,9 @@
 </section>
 
 <!-- ============ ABOUT ============ -->
-<section class="about" id="about" aria-labelledby="about-title">
+<section class="about light" id="about" aria-labelledby="about-title">
   <header class="chapter">
-    <p class="chapter-no">Chapter VI</p>
+    <p class="chapter-no">Chapter VII</p>
     <h2 class="chapter-title" id="about-title">從幫品牌說故事，到陪你被看見</h2>
   </header>
   <div class="about-grid">
@@ -531,7 +579,7 @@
 </section>
 
 <!-- ============ OTHER SERVICES ============ -->
-<section class="services" id="services" aria-labelledby="services-title">
+<section class="services light" id="services" aria-labelledby="services-title">
   <h3 class="sub-head" id="services-title"><span class="en">Also</span>其他服務</h3>
   <div class="svc-grid other-grid">
     <div class="svc reveal" id="healing">
@@ -605,5 +653,23 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" integrity="sha512-dLxUelApnYxpLt6K2iomGngnHO83iUvZytA3YjDUCjT0HDOHKXnVYdf3hU4JjM8uEhxf9nD1/ey98U3t2vZ0qQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="main.js"></script>
+<script>
+(()=>{
+  const boxes=[...document.querySelectorAll('.check-list input')];
+  const outs=[...document.querySelectorAll('.check-out')];
+  const n=document.getElementById('check-n');
+  const order=['patrol','video','coach'];
+  const update=()=>{
+    const c={patrol:0,video:0,coach:0};
+    boxes.forEach(b=>{if(b.checked)c[b.dataset.k]++; b.closest('li').classList.toggle('on',b.checked);});
+    const total=c.patrol+c.video+c.coach; n.textContent=total;
+    let r='none'; if(total){r=order.reduce((a,k)=>c[k]>c[a]?k:a,order[0]); if(!c[r])r=order.find(k=>c[k]);}
+    outs.forEach(o=>o.hidden=o.dataset.r!==r);
+  };
+  boxes.forEach(b=>b.addEventListener('change',update));
+  if(!/Android|iPhone|iPad|iPod/i.test(navigator.userAgent))
+    document.querySelectorAll('a[href*="line.me/R/oaMessage/"]').forEach(a=>a.href='https://line.me/R/ti/p/@793hhvkh');
+})();
+</script>
 </body>
 </html>
