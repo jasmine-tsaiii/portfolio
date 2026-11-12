@@ -152,7 +152,20 @@
 
 .th-footer{padding:28px var(--gutter);border-top:1px solid var(--line);color:var(--muted);font-size:13px;text-align:center}
 
+/* 海巡筆記：文章分組卡片 */
+.th-articles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,2.4vw,32px);margin-top:clamp(28px,5vh,44px);align-items:start}
+.th-article-group{display:flex;flex-direction:column;gap:12px}
+.th-article-group h3{font-size:15px;letter-spacing:.16em;color:var(--gold);padding-bottom:12px;border-bottom:1px solid var(--line-2);margin-bottom:4px}
+.th-article{display:block;padding:18px 20px;border:1px solid var(--line);border-radius:12px;background:var(--ink-2);text-decoration:none;transition:border-color .3s,transform .3s var(--ease)}
+.th-article:hover{border-color:var(--gold);transform:translateY(-2px)}
+.th-article h4{color:var(--paper)}
+.th-article p{margin-top:6px;color:var(--paper-dim);font-size:14px;line-height:1.7}
+.th-article span{display:inline-block;margin-top:10px;color:var(--gold);font-size:13px;letter-spacing:.08em}
+.th-article i{font-style:normal}
+.th-articles-all{margin-top:clamp(24px,4vh,36px);text-align:center}
+
 @media (max-width:860px){
+  .th-articles{grid-template-columns:minmax(0,1fr);gap:44px}
   .th-nav nav{display:none}
   .th-nav .nav-cta{margin-left:auto}
   .th-split,.th-feature,.th-reasons{grid-template-columns:minmax(0,1fr)}
@@ -188,7 +201,8 @@
 }
 @media (prefers-reduced-motion:reduce){
   .grain{animation:none}
-  .th-btn,.th-more-link{transition:none}
+  .th-btn,.th-more-link,.th-article{transition:none}
+  .th-article:hover{transform:none}
 }
 .th-detail{margin-bottom:clamp(20px,3vh,28px)}
 .th-detail ul{margin:0;padding:0;list-style:none}
