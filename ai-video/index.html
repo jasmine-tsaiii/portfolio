@@ -9,13 +9,13 @@ window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-79V9EQRSN1');
-// 點 LINE 按鈕記成 line_click；點去 jas-soul.com 的文章記成 article_click
+// 點 LINE 按鈕記成 line_cta_click；點去 jas-soul.com 的文章記成 article_click
 document.addEventListener('click', function (e) {
   var a = e.target.closest && e.target.closest('a[href]');
   if (!a) return;
   var url = a.href, text = (a.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 60);
   if (/line\.me|lin\.ee/.test(url)) {
-    gtag('event', 'line_click', { link_url: url, link_text: text, page_path: location.pathname });
+    gtag('event', 'line_cta_click', { link_url: url, link_text: text, page_path: location.pathname });
   } else if (/^https:\/\/jas-soul\.com\//.test(url)) {
     gtag('event', 'article_click', { link_url: url.split('?')[0], link_text: text, page_path: location.pathname });
   }
