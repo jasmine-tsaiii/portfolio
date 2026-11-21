@@ -2,6 +2,25 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8">
+<!-- Google Analytics 4（跟 jas-soul.com 同一個資源） -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-79V9EQRSN1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-79V9EQRSN1');
+// 點 LINE 按鈕記成 line_click；點去 jas-soul.com 的文章記成 article_click
+document.addEventListener('click', function (e) {
+  var a = e.target.closest && e.target.closest('a[href]');
+  if (!a) return;
+  var url = a.href, text = (a.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 60);
+  if (/line\.me|lin\.ee/.test(url)) {
+    gtag('event', 'line_click', { link_url: url, link_text: text, page_path: location.pathname });
+  } else if (/^https:\/\/jas-soul\.com\//.test(url)) {
+    gtag('event', 'article_click', { link_url: url.split('?')[0], link_text: text, page_path: location.pathname });
+  }
+}, true);
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Threads 脆海巡代操服務｜讓更多人看見你｜Jasmine Tsai</title>
 <meta name="description" content="Threads（脆）海巡代操服務：從品牌定位、關鍵字監測、爆文預測、專屬留言風格到流量追蹤，留言人工確認後才發出。透過脆海巡，讓更多潛在客戶看見你。">
@@ -386,22 +405,22 @@
     <div class="th-articles">
       <div class="th-article-group">
         <h3>認識海巡</h3>
-        <a class="th-article" href="https://jas-soul.com/2026/11/04/threads-patrol-guide/?utm_source=jasmine_site&amp;utm_medium=referral&amp;utm_campaign=threads_patrol_page&amp;utm_content=article_card" target="_blank" rel="noopener">
+        <a class="th-article" href="https://jas-soul.com/2026/11/04/threads-patrol-guide/" target="_blank" rel="noopener">
           <h4>Threads 海巡是什麼？</h4>
           <p>適合誰、怎麼做，以及怎麼看成效。</p>
           <span>閱讀 <i aria-hidden="true">↗</i></span>
         </a>
-        <a class="th-article" href="https://jas-soul.com/2026/11/05/threads-find-customers/?utm_source=jasmine_site&amp;utm_medium=referral&amp;utm_campaign=threads_patrol_page&amp;utm_content=article_card" target="_blank" rel="noopener">
+        <a class="th-article" href="https://jas-soul.com/2026/11/05/threads-find-customers/" target="_blank" rel="noopener">
           <h4>Threads 怎麼找客戶？</h4>
           <p>從求推薦貼文，找到正在找服務的人。</p>
           <span>閱讀 <i aria-hidden="true">↗</i></span>
         </a>
-        <a class="th-article" href="https://jas-soul.com/2026/11/05/threads-patrol-keywords/?utm_source=jasmine_site&amp;utm_medium=referral&amp;utm_campaign=threads_patrol_page&amp;utm_content=article_card" target="_blank" rel="noopener">
+        <a class="th-article" href="https://jas-soul.com/2026/11/05/threads-patrol-keywords/" target="_blank" rel="noopener">
           <h4>海巡關鍵字怎麼找？</h4>
           <p>用服務、地區與需求情境，建立找客清單。</p>
           <span>閱讀 <i aria-hidden="true">↗</i></span>
         </a>
-        <a class="th-article" href="https://jas-soul.com/2026/11/05/threads-patrol-comment-timing/?utm_source=jasmine_site&amp;utm_medium=referral&amp;utm_campaign=threads_patrol_page&amp;utm_content=article_card" target="_blank" rel="noopener">
+        <a class="th-article" href="https://jas-soul.com/2026/11/05/threads-patrol-comment-timing/" target="_blank" rel="noopener">
           <h4>海巡什麼時候留言？</h4>
           <p>熱門貼文和求推薦文，怎麼判斷留言時機。</p>
           <span>閱讀 <i aria-hidden="true">↗</i></span>
@@ -409,17 +428,17 @@
       </div>
       <div class="th-article-group">
         <h3>店家在考慮的事</h3>
-        <a class="th-article" href="https://jas-soul.com/2026/11/04/threads-patrol-cost/?utm_source=jasmine_site&amp;utm_medium=referral&amp;utm_campaign=threads_patrol_page&amp;utm_content=article_card" target="_blank" rel="noopener">
+        <a class="th-article" href="https://jas-soul.com/2026/11/04/threads-patrol-cost/" target="_blank" rel="noopener">
           <h4>海巡代操費用怎麼看？</h4>
           <p>費用包含哪些工作，跟全包代操差在哪。</p>
           <span>閱讀 <i aria-hidden="true">↗</i></span>
         </a>
-        <a class="th-article" href="https://jas-soul.com/2026/11/05/threads-patrol-diy-or-agency/?utm_source=jasmine_site&amp;utm_medium=referral&amp;utm_campaign=threads_patrol_page&amp;utm_content=article_card" target="_blank" rel="noopener">
+        <a class="th-article" href="https://jas-soul.com/2026/11/05/threads-patrol-diy-or-agency/" target="_blank" rel="noopener">
           <h4>海巡自己做還是找代操？</h4>
           <p>從時間、分工與費用，判斷適合的方式。</p>
           <span>閱讀 <i aria-hidden="true">↗</i></span>
         </a>
-        <a class="th-article" href="https://jas-soul.com/2026/11/05/threads-views-no-inquiries/?utm_source=jasmine_site&amp;utm_medium=referral&amp;utm_campaign=threads_patrol_page&amp;utm_content=article_card" target="_blank" rel="noopener">
+        <a class="th-article" href="https://jas-soul.com/2026/11/05/threads-views-no-inquiries/" target="_blank" rel="noopener">
           <h4>有曝光卻沒詢問？</h4>
           <p>從貼文到預約，檢查這五個環節。</p>
           <span>閱讀 <i aria-hidden="true">↗</i></span>
@@ -427,19 +446,19 @@
       </div>
       <div class="th-article-group">
         <h3>產業實例：髮廊</h3>
-        <a class="th-article" href="https://jas-soul.com/2026/11/05/hair-salon-threads-local-marketing/?utm_source=jasmine_site&amp;utm_medium=referral&amp;utm_campaign=threads_patrol_page&amp;utm_content=article_card" target="_blank" rel="noopener">
+        <a class="th-article" href="https://jas-soul.com/2026/11/05/hair-salon-threads-local-marketing/" target="_blank" rel="noopener">
           <h4>髮廊怎麼找在地客戶？</h4>
           <p>剪髮、自然捲、染燙的海巡關鍵字與留言範例。</p>
           <span>閱讀 <i aria-hidden="true">↗</i></span>
         </a>
-        <a class="th-article" href="https://jas-soul.com/2026/11/12/hair-salon-threads-management/?utm_source=jasmine_site&amp;utm_medium=referral&amp;utm_campaign=threads_patrol_page&amp;utm_content=article_card" target="_blank" rel="noopener">
+        <a class="th-article" href="https://jas-soul.com/2026/11/12/hair-salon-threads-management/" target="_blank" rel="noopener">
           <h4>髮廊 Threads 代操怎麼做？</h4>
           <p>從店家訪談、關鍵字海巡，到設計師發文與審稿。</p>
           <span>閱讀 <i aria-hidden="true">↗</i></span>
         </a>
       </div>
     </div>
-    <p class="th-articles-all"><a class="th-link" href="https://jas-soul.com/category/threads-patrol/?utm_source=jasmine_site&amp;utm_medium=referral&amp;utm_campaign=threads_patrol_page&amp;utm_content=view_all" target="_blank" rel="noopener">看全部海巡文章 →</a></p>
+    <p class="th-articles-all"><a class="th-link" href="https://jas-soul.com/category/threads-patrol/" target="_blank" rel="noopener">看全部海巡文章 →</a></p>
   </section>
 
   <section class="th-section th-split" id="faq">

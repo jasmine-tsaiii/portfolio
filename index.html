@@ -2,6 +2,25 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8">
+<!-- Google Analytics 4（跟 jas-soul.com 同一個資源） -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-79V9EQRSN1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-79V9EQRSN1');
+// 點 LINE 按鈕記成 line_click；點去 jas-soul.com 的文章記成 article_click
+document.addEventListener('click', function (e) {
+  var a = e.target.closest && e.target.closest('a[href]');
+  if (!a) return;
+  var url = a.href, text = (a.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 60);
+  if (/line\.me|lin\.ee/.test(url)) {
+    gtag('event', 'line_click', { link_url: url, link_text: text, page_path: location.pathname });
+  } else if (/^https:\/\/jas-soul\.com\//.test(url)) {
+    gtag('event', 'article_click', { link_url: url.split('?')[0], link_text: text, page_path: location.pathname });
+  }
+}, true);
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Jasmine Tsai｜Threads 海巡代操・短影音剪輯・自媒體陪跑</title>
 <meta name="description" content="Jasmine 佳穎：7 年社群行銷經驗，提供 Threads 脆海巡代操、短影音剪輯外包、一對一自媒體陪跑與 AI 小工具開發，讓對的人看見你。">
